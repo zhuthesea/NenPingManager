@@ -135,7 +135,7 @@
             }
             
             if (resultArray.count == 0) {
-                completionHandler(nil,nil);
+                completionHandler(nil,nil,0);
                 return;
             }
             
@@ -145,11 +145,12 @@
             
             NSMutableArray *array = [NSMutableArray array];
             for (NENAddressItem *item in resultArray) {
-                [array addObject:item.hostName];
+                [resultDict setObject:[NSNumber numberWithDouble:item.delayMillSeconds] forKey:item.hostName];
+                [array addObject:resultDict];
             }
             NENAddressItem *item = resultArray.firstObject;
             NSLog(@"the fast: %@-%.2f ms",item.hostName,item.delayMillSeconds);
-            completionHandler(item.hostName, [array copy]);
+            completionHandler(item.hostName, [array copy],item.delayMillSeconds);
         });
     }];
 }

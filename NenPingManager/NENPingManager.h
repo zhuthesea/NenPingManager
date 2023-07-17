@@ -10,17 +10,17 @@
 
 @interface NENAddressItem : NSObject
 
-@property (nonatomic, copy, readonly) NSString *hostName;
+@property(nonatomic, copy, readonly) NSString *hostName;
 /// average delay time
-@property (nonatomic, assign, readonly) double delayMillSeconds;
+@property(nonatomic, assign, readonly) double delayMillSeconds;
 
-@property (nonatomic, strong) NSMutableArray *delayTimes;
+@property(nonatomic, strong) NSMutableArray *delayTimes;
 
 - (instancetype)initWithHostName:(NSString *)hostName;
 
 @end
 
-typedef void(^CompletionHandler)(NSString *, NSArray *);
+typedef void (^CompletionHandler)(NSString *, NSArray *, NSNumber *);
 
 NS_ASSUME_NONNULL_BEGIN
 
