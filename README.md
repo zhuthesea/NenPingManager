@@ -2,6 +2,30 @@
 based on Apple SimplePing, you can use it to ping multiple hosts at once.
 
 ```
+//Podfile
+platform :ios, '11.0'
+target 'testPing' do
+  pod 'NenPingManager', '~> 0.0.3'
+
+end
+
+```
+
+```
+//uts app-ios config.json
+{
+	"deploymentTarget": "11.0",   
+	"dependencies-pods": [
+        {
+            "name": "NenPingManager",  
+            "version": "0.0.3"     
+        }
+    ]
+}
+```
+
+
+```
 //vue
     let hosts = ["www.bilibili.com", "www.baidu.com", "www.youku.com", "www.hao123.com"]
     getFastestAddress(hosts, function(fastHost, addressLists, ms) {
