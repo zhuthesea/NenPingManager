@@ -150,7 +150,7 @@
             }
             NENAddressItem *item = resultArray.firstObject;
             NSLog(@"the fast: %@-%.2f ms",item.hostName,item.delayMillSeconds);
-            NSNumber *ms = [NSNumber numberWithDouble:item.delayMillSeconds]
+            NSNumber *ms = [NSNumber numberWithDouble:item.delayMillSeconds];
             completionHandler(item.hostName, [array copy],ms);
         });
     }];
